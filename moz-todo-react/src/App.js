@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App(props) {
-  const name = "임지현";
+  const name = props.name;
   return (
     <div className="App">
       <header className="App-header">
