@@ -1,0 +1,8 @@
+
+./moz-todo-react/node_modules
+./moz-todo-react/.pnp
+./moz-todo-react/.pnp.js
+
+# testing
+./moz-todo-react/coverage
+
