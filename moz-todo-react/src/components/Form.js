@@ -1,8 +1,13 @@
 import React from "react";
 
+function handleSubmit(e) {
+  e.preventDefault();
+  alert("할일이 추가 되었습니다!");
+}
+
 function Form(props) {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
           무엇을 해야 합니까?
