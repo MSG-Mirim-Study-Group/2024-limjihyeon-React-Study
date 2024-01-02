@@ -6,7 +6,6 @@ import { nanoid } from "nanoid";
 
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
-  const newTask = { id: `todo-${nanoid()}`, name, completed: false };
 
   const taskList = tasks.map((task) => (
     <Todo
@@ -17,10 +16,14 @@ function App(props) {
     />
   ));
 
+  const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
+  const headingText = `${taskList.length} ${tasksNoun} remaining`;
+
   function addTask(name) {
-    const newTask = { id: "id", name, completed: false };
+    const newTask = { id: `todo-${nanoid()}`, name, completed: false };
     setTasks([...tasks, newTask]);
   }
+
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic for 임지현</h1>
@@ -31,7 +34,7 @@ function App(props) {
         <FilterButton />
         <FilterButton />
       </div>
-      <h2 id="list-heading">3개의 작업이 남음</h2>
+      <h2 id="list-heading">{headingText}</h2>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"
